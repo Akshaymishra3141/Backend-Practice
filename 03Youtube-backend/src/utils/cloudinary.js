@@ -21,6 +21,7 @@ const uploadOnCloudinary = async (localFilePath) => {
         })
 
         console.log("File has uploaded on cloudinary ", response.url);
+        fs.unlinkSync(localFilePath)  // ye locally saved file ko delete kardega kyun ki wo server pe upload ho chuka hai ab uski jarurat nahi hai
 
         return response;
         
